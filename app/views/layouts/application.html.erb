@@ -1,24 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Allora</title>
+    <title>allora</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   </head>
-
   <body>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-        <%= yield %>
-      </div>
-    </div>
-  </div>
-
+    <%= yield %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
