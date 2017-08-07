@@ -6,6 +6,7 @@ class BatchesController < ApplicationController
   end
 
   def show
+    @posts = @batch.posts
   end
 
   def new

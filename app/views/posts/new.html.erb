@@ -1,5 +1,5 @@
 <h1 class="text-center">add new post (up to 5 posts per batch)</h1>
-<%= simple_form_for [@batch, @post] do |f| %>
+<%= simple_form_for [@batch, @post], remote: true do |f| %>
   <%= f.input :greeting %>
   <%= f.input :headline %>
   <%= f.input :giphy_url %>

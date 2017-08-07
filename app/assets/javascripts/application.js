@@ -16,3 +16,36 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function(){
+
+  $(".more").click(function(e){
+    e.preventDefault();
+
+    $(this).next().remove();
+
+    $(this).parent().removeClass("text-center").addClass("text-right");
+
+    $(this).removeClass("btn btn-xs option").addClass("balloon-right");
+
+    var target = $(this).data("target");
+    $(target).removeClass("hidden");
+
+    $("#chatbox").animate({ scrollTop: $('#chatbox').prop("scrollHeight")}, 2000);
+  });
+
+  $(".next").click(function(e){
+    e.preventDefault();
+
+    $(this).prev().remove();
+
+    $(this).parent().removeClass("text-center").addClass("text-right");
+
+    $(this).removeClass("btn btn-xs option").addClass("balloon-right");
+
+    var target = $(this).data("target");
+    $(target).removeClass("hidden");
+
+    $("#chatbox").animate({ scrollTop: $('#chatbox').prop("scrollHeight")}, 1000);
+  });
+});
