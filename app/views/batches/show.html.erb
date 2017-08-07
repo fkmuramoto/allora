@@ -1,1 +1,49 @@
-<%= link_to "link", new_batch_post_path(@batch) %>
+<div id="chatbox">
+
+  <% @posts.each_with_index do |post, index| %>
+    <% if index == 0 %>
+      <div class="headline text-center" id="headline<%= index %>">
+        <p class="balloon">Headline: <%= post.headline %></p>
+        <div class="text-center options">
+          <a class="more btn btn-xs option" data-target="#box<%= index %>">Tell me more</a>
+          <a class="next btn btn-xs option" data-target="#headline<%= index + 1 %>">Next</a>
+        </div>
+      </div>
+
+      <div class="boxes hidden" id="box<%= index %>">
+        <p class="balloon"><%= post.box1 %></p>
+        <p class="balloon"><%= post.box2 %></p>
+        <p class="balloon"><%= post.box2 %></p>
+        <p class="balloon"><%= post.box4 %></p>
+        <div class="text-center options">
+          <a class="next btn btn-xs option" data-target="#headline<%= index + 1 %>">Next</a>
+        </div>
+      </div>
+    <% else %>
+      <div class="headline text-center hidden" id="headline<%= index %>">
+        <p class="balloon">Headline: <%= post.headline %></p>
+        <div class="text-center options">
+          <a class="more btn btn-xs option" data-target="#box<%= index %>">Tell me more</a>
+          <a class="next btn btn-xs option" data-target="#headline<%= index + 1 %>">Next</a>
+        </div>
+      </div>
+      <div class="boxes hidden" id="box<%= index %>">
+        <p class="balloon"><%= post.box1 %></p>
+        <p class="balloon"><%= post.box2 %></p>
+        <p class="balloon"><%= post.box2 %></p>
+        <p class="balloon"><%= post.box4 %></p>
+        <div class="text-center options">
+          <a class="next btn btn-xs option" data-target="#headline<%= index + 1 %>">Next</a>
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>
+
+  <% @posts.each_with_index do |post, index| %>
+
+  <% end %>
+
+</div>
+
+

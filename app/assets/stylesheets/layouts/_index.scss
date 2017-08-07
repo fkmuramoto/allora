@@ -3,3 +3,9 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+
+@import "../config/colors";
+
+body {
+  background: $light-gray;
+}
