@@ -31,7 +31,7 @@ $(function(){
     var target = $(this).data("target");
     $(target).removeClass("hidden");
 
-    $("#chatbox").animate({ scrollTop: $('#chatbox').prop("scrollHeight")}, 1000);
+    $("#chatbox").animate({ scrollTop: $('#chatbox').prop("scrollHeight")}, 2000);
   });
 
   $(".next").click(function(e){
