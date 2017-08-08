@@ -36,9 +36,30 @@
             </div>
           </div>
 
+        <% elsif index + 1 == @posts.count %>
+
+          <div class="headline hidden" id="headline<%= index %>">
+          <p class="balloon">Headline: <%= post.headline %></p>
+
+            <div class="text-center options">
+              <a class="more btn btn-xs option" data-target="#box<%= index %>">Tell me more</a>
+              <a class="next btn btn-xs option" data-target="#end<%= index + 1 %>">Next</a>
+            </div>
+          </div>
+
+          <div class="boxes hidden" id="box<%= index %>">
+            <p class="balloon"><%= post.box1 %></p>
+            <p class="balloon"><%= post.box2 %></p>
+            <p class="balloon"><%= post.box2 %></p>
+            <p class="balloon"><%= post.box4 %></p>
+            <div class="text-center options">
+              <a class="next btn btn-xs option" data-target="#end<%= index + 1 %>">Anything else?</a>
+            </div>
+          </div>
+
         <% else %>
 
-          <div class="headline text-center hidden" id="headline<%= index %>">
+          <div class="headline hidden" id="headline<%= index %>">
             <p class="balloon">Headline: <%= post.headline %></p>
             <div class="text-center options">
               <a class="more btn btn-xs option" data-target="#box<%= index %>">Tell me more</a>
@@ -60,6 +81,12 @@
 
       <% end %>
 
+      <div class="boxes hidden" id="end<%= @posts.count %>">
+
+        <p class="balloon">You're all caught up! Check back later</p>
+        <%= cl_image_tag("giphy_1_jscgvl.gif", :height=>150, :crop=>"scale", class: "balloon-image") %>
+
+      </div>
 
   </div>
 </div>
