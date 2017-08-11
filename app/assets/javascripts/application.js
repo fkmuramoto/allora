@@ -29,7 +29,15 @@ $(function(){
     $(this).removeClass("btn btn-xs option").addClass("balloon-right");
 
     var target = $(this).data("target");
-    $(target).removeClass("hidden");
+
+    $(target).children().each(function(index, element){
+      setTimeout(function() {
+        $(element).removeClass("hidden") }, index * 1250 + Math.random() * 750);
+    });
+
+    // var target = $(this).data("target");
+
+    // $(target).removeClass("hidden");
 
     $("#chatbox").animate({ scrollTop: $('#chatbox').prop("scrollHeight")}, 2000);
   });

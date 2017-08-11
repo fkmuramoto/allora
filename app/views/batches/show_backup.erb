@@ -17,50 +17,26 @@
 
         <% if index == 0 %>
 
-          <!-- <div class="headline" id="headline<%= index %>"> -->
+          <p class="balloon"><%= @batch.greeting %></p>
+          <%= cl_image_tag("giphy_lrv5ih.gif", :height=>150, :crop=>"scale", class: "balloon-image") %>
 
-            <p class="headline balloon" id="headline<%= index %>"><%= post.headline %></p>
-
-            <!-- <nav>
-              <ul class="pager">
-                <a class="more btn btn-xs option" data-target="#box<%= index %>">...</a>
-                <a class="next btn btn-xs option" data-target="#headline<%= index + 1 %>">Next</a>
-              </ul>
-            </nav>
- -->
- <!-- Libera cada balao a cada alguns segundos
-  box.children().each(function(index, el) {
-  setTimeout(function() { $(el).show() }, index * 1000 + Math.random() * 800);
-});
-
-$("box1").children().each(function(index, el) {
-  setTimeout(function() { $(el).show() }, index * 1000 + Math.random() * 800);
-});
-
- -->
-<!-- Joga o box pra direita, mexe com o transform pra posicionar ele em cima com animaçao
-     transition: transform 0.5s ease-in-out;
-    transform: translate(-100%, 0);
-    position: absolute;
-    right: -100%; -->
+          <div class="headline" id="headline<%= index %>">
+          <p class="balloon">Headline: <%= post.headline %></p>
 
             <div class="text-center options">
-              <a class="more btn btn-xs option" data-target="#screen<%= index %>">Tell me more</a>
+              <a class="more btn btn-xs option" data-target="#box<%= index %>">Tell me more</a>
               <a class="next btn btn-xs option" data-target="#headline<%= index + 1 %>">Next</a>
             </div>
-          <!-- </div> -->
+          </div>
 
-
-
-
-          <div class="screen" id="screen<%= index %>">
-            <p class="balloon hidden">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies.</p>
-            <p class="balloon hidden">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo</p>
-
-            <div class="text-center options hidden">
+          <div class="boxes hidden" id="box<%= index %>">
+            <p class="balloon"><%= post.box1 %></p>
+            <p class="balloon"><%= post.box2 %></p>
+            <p class="balloon"><%= post.box2 %></p>
+            <p class="balloon"><%= post.box4 %></p>
+            <div class="text-center options">
               <a class="next btn btn-xs option" data-target="#headline<%= index + 1 %>">Next</a>
             </div>
-
           </div>
 
         <% elsif index + 1 == @posts.count %>
