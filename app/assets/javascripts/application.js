@@ -40,7 +40,7 @@ $(function(){
         $(element).removeClass("hidden") }, index * 1250 + Math.random() * 750);
     });
 
-// animação do scroll down
+// animação do scroll
 
     $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
 
@@ -84,7 +84,8 @@ $(function(){
         $(element).removeClass("hidden") }, index * 1250 + Math.random() * 750);
     });
 
-    $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
+    var height = $(document).height();
+    $("#app-window").animate({ scrollTop: height}, 3000);
 
   });
 
@@ -101,7 +102,8 @@ $(function(){
         $(element).removeClass("hidden") }, index * 1250 + Math.random() * 750);
     });
 
-    $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
+    var height = $(document).height();
+    $("#app-window").animate({ scrollTop: height}, 3000);
 
   });
 });
