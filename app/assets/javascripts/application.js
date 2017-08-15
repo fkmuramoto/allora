@@ -17,43 +17,98 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+
 $(function(){
 
-  $(".more").click(function(e){
+// MORE
+// botão 'more'
+
+  $(".click-more").click(function(e){
     e.preventDefault();
 
+// animação do botão após clique
+
     $(this).next().remove();
-
     $(this).parent().removeClass("text-center").addClass("text-right");
+    $(this).removeClass("btn btn-xs").addClass("balloon-right");
 
-    $(this).removeClass("btn btn-xs option").addClass("balloon-right");
+// animação do balloon
 
     var target = $(this).data("target");
-
     $(target).children().each(function(index, element){
       setTimeout(function() {
         $(element).removeClass("hidden") }, index * 1250 + Math.random() * 750);
     });
 
-    // var target = $(this).data("target");
+// animação do scroll down
 
-    // $(target).removeClass("hidden");
+    $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
 
-    $("#chatbox").animate({ scrollTop: $('#chatbox').prop("scrollHeight")}, 2000);
   });
 
-  $(".next").click(function(e){
+
+// NEXT
+// botão 'next'
+
+  $(".click-next").click(function(e){
     e.preventDefault();
 
     $(this).prev().remove();
-
     $(this).parent().removeClass("text-center").addClass("text-right");
-
-    $(this).removeClass("btn btn-xs option").addClass("balloon-right");
+    $(this).removeClass("btn btn-xs").addClass("balloon-right");
 
     var target = $(this).data("target");
-    $(target).removeClass("hidden");
+    $(target).children().each(function(index, element){
+      setTimeout(function() {
+        $(element).removeClass("hidden") }, index * 1250 + Math.random() * 750);
+    });
 
-    $("#chatbox").animate({ scrollTop: $('#chatbox').prop("scrollHeight")}, 1000);
+
+    $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
   });
 });
+
+
+$(function(){
+
+  $(".new-click-more").click(function(e){
+    e.preventDefault();
+
+    $(this).next().remove();
+    $(this).parent().removeClass("text-center").addClass("text-right");
+    $(this).removeClass("btn btn-xs").addClass("balloon-right");
+
+    var next_screen = $(this).parent().parent().next();
+    $(next_screen).children().each(function(index, element){
+      setTimeout(function() {
+        $(element).removeClass("hidden") }, index * 1250 + Math.random() * 750);
+    });
+
+    $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
+
+  });
+
+  $(".new-click-next").click(function(e){
+    e.preventDefault();
+
+    $(this).prev().remove();
+    $(this).parent().removeClass("text-center").addClass("text-right");
+    $(this).removeClass("btn btn-xs").addClass("balloon-right");
+
+    var next_post = $(this).parent().parent().parent().next();
+    $(next_post).children(".screen1").children().each(function(index, element){
+      setTimeout(function() {
+        $(element).removeClass("hidden") }, index * 1250 + Math.random() * 750);
+    });
+
+    $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
+
+  });
+});
+
+
+
+
+
+
+

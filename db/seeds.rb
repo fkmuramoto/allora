@@ -8,13 +8,12 @@
 Batch.destroy_all
 
 greetings = ["Hello! :)", "Hey, what's up?", "Welcome!", "Nice to see you!", "Hey, guys!"]
-
 i = 1
 
 5.times do
-  b = Batch.create(name: i, greeting: greetings.sample)
+  batch = Batch.create(name: i, greeting: greetings.sample)
   i += 1
   5.times do
-    Post.create(headline: Faker::HowIMetYourMother.catch_phrase, box1: Faker::HowIMetYourMother.quote, box2: Faker::HowIMetYourMother.quote, box3: Faker::HowIMetYourMother.quote, box4: Faker::HowIMetYourMother.quote, batch: b)
+    Post.create(headline: Faker::HowIMetYourMother.quote, box1: Faker::Lorem.paragraph, box2: Faker::Lorem.paragraph, box3: Faker::Lorem.paragraph, box4: Faker::Lorem.paragraph, batch: batch)
   end
 end
