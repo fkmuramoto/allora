@@ -1,17 +1,40 @@
-#app-window {
-  height: calc(100vh - 40px);
-  width: 100%;
-  // padding: 20px 10% 20px 10%;
-  overflow-y: scroll;
-  position: relative;
+.show {
+  transition: transform 0.5s ease-in-out;
+  transform: translate(-100%, 0);
+  position: absolute;
+  right: -100%;
+  height: auto;
 }
 
+#app-window {
+  height: calc(100vh - 40px);
+  overflow-y: auto;
+  // display: table;
+  // padding: 20px 10% 20px 10%;
+}
+
+// .flex {
+//   display: flex;
+// }
+
+// .post {
+//   display: block;
+//   vertical-align: bottom;
+// }
+
 .teste {
-  width: 100%;
+  flex: 1;
+  width: 100vw;
   padding: 20px 10% 20px 10%;
-  overflow-y: scroll;
-  position: absolute;
-  bottom: 0px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  .post:first-child {
+    height: calc(100vh - 40px);
+    display: flex;
+    align-items: flex-end;
+  }
 }
 
 .click-more {
@@ -45,10 +68,10 @@
 
 .balloon {
   background: #EBEBEB;
-  width: 75%;
+  width: 85%;
   border-radius: 4px 20px 20px 20px;
   padding: 15px 25px 15px 25px;
-  line-height: 175%;
+  line-height: 150%;
 
   &-image {
     background: #EBEBEB;
