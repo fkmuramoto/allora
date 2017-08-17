@@ -20,8 +20,9 @@
 $(function(){
 
   $(document).ready(function(){
-    setTimeout(function () {
-      $("r-side").addClass("hide")}, 2000);
+    if(screen.width < 500)
+      setTimeout(function () {
+        $(".r-side").addClass("show")}, 2000);
   });
 
   $(".click-more").click(function(e){

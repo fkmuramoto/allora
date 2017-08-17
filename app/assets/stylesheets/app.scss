@@ -1,8 +1,9 @@
-.hide {
+.show {
   transition: transform 0.5s ease-in-out;
   transform: translate(-100%, 0);
   position: absolute;
   right: -100%;
+  height: auto;
 }
 
 #app-window {
@@ -30,7 +31,7 @@
   flex-direction: column;
 
   .post:first-child {
-    height: 100vh;
+    height: calc(100vh - 40px);
     display: flex;
     align-items: flex-end;
   }
