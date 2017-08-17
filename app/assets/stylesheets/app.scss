@@ -1,8 +1,17 @@
 #app-window {
   height: calc(100vh - 40px);
   width: 100%;
-  padding: 20px 15% 20px 15%;
+  // padding: 20px 10% 20px 10%;
   overflow-y: scroll;
+  position: relative;
+}
+
+.teste {
+  width: 100%;
+  padding: 20px 10% 20px 10%;
+  overflow-y: scroll;
+  position: absolute;
+  bottom: 0px;
 }
 
 .click-more {
@@ -21,23 +30,6 @@
   margin: 5px 0;
 }
 
-.new-click-more {
-  background: #FF8008;
-  color: white;
-  border-radius: 20px;
-  padding: 10px 15px;
-  margin: 5px 0;
-}
-
-.new-click-next {
-  background: #FF8008;
-  color: white;
-  border-radius: 20px;
-  padding: 10px 15px;
-  margin: 5px 0;
-  text-decoration: none;
-}
-
 .btn-margin {
   margin: 20px 0;
 }
@@ -46,11 +38,17 @@
   border-radius: 4px 20px 20px 20px;
 }
 
+.left {
+  position: relative;
+  left: 700px;
+}
+
 .balloon {
   background: #EBEBEB;
+  width: 75%;
   border-radius: 4px 20px 20px 20px;
-  padding: 15px;
-  text-decoration: none;
+  padding: 15px 25px 15px 25px;
+  line-height: 175%;
 
   &-image {
     background: #EBEBEB;
@@ -65,5 +63,6 @@
     border-radius: 20px 4px 20px 20px;
     padding: 10px 15px;
     margin: 5px 0;
+    text-decoration: none;
   }
 }
