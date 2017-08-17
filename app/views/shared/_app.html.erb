@@ -1,50 +1,53 @@
 <div id="app-window">
 
-<div class="teste">
+  <!-- <div class="flex"> -->
 
-<div class="post">
-  <div class="intro">
-    <div class="text-center btn-margin">
-      <a class="btn btn-xs click-next" style="text-decoration: none; color: white">Start!</a>
+    <div class="teste">
+
+      <div class="post">
+        <div class="intro">
+          <div class="text-center btn-margin">
+            <a class="btn btn-xs click-next" style="text-decoration: none; color: white">Start!</a>
+          </div>
+        </div>
+      </div>
+
+      <% @posts.each do |post| %>
+
+      <div class="post">
+
+        <!-- SCREEN 1 -->
+        <div class="screen1">
+          <p class="balloon hidden left"><%= post.headline %></p>
+          <img class="pic-border hidden left" src="http://via.placeholder.com/250x150" alt="">
+          <div class="text-center btn-margin hidden">
+            <a class="btn btn-xs click-more" style="text-decoration: none; color: white">Tell me more</a>
+            <a class="btn btn-xs click-next" style="text-decoration: none; color: white">Next post</a>
+          </div>
+        </div>
+
+        <!-- SCREEN 2 -->
+        <div class="screen2">
+          <p class="balloon hidden left"><%= post.box1 %></p>
+          <p class="balloon hidden left"><%= post.box2 %></p>
+          <div class="text-center btn-margin hidden">
+            <a class="btn btn-xs click-more" style="text-decoration: none; color: white">Continue...</a>
+          </div>
+        </div>
+
+        <!-- SCREEN 3 -->
+        <div class="screen3">
+          <p class="balloon hidden left"><%= post.box3 %></p>
+          <p class="balloon hidden left"><%= post.box4 %></p>
+          <div class="text-center btn-margin hidden">
+            <a class="btn btn-xs click-next" style="text-decoration: none; color: white">Next post</a>
+          </div>
+        </div>
+      </div>
+
+      <% end %>
+
     </div>
-  </div>
-</div>
 
-<% @posts.each do |post| %>
-
-<div class="post">
-
-  <!-- SCREEN 1 -->
-  <div class="screen1">
-    <p class="balloon hidden left"><%= post.headline %></p>
-    <img class="pic-border hidden left" src="http://via.placeholder.com/250x150" alt="">
-    <div class="text-center btn-margin hidden">
-      <a class="btn btn-xs click-more" style="text-decoration: none; color: white">Tell me more</a>
-      <a class="btn btn-xs click-next" style="text-decoration: none; color: white">Next post</a>
-    </div>
-  </div>
-
-  <!-- SCREEN 2 -->
-  <div class="screen2">
-    <p class="balloon hidden left"><%= post.box1 %></p>
-    <p class="balloon hidden left"><%= post.box2 %></p>
-    <div class="text-center btn-margin hidden">
-      <a class="btn btn-xs click-more" style="text-decoration: none; color: white">Continue...</a>
-    </div>
-  </div>
-
-  <!-- SCREEN 3 -->
-  <div class="screen3">
-    <p class="balloon hidden left"><%= post.box3 %></p>
-    <p class="balloon hidden left"><%= post.box4 %></p>
-    <div class="text-center btn-margin hidden">
-      <a class="btn btn-xs click-next" style="text-decoration: none; color: white">Next post</a>
-    </div>
-  </div>
-</div>
-
-<% end %>
-
-</div>
-
+  <!-- </div> -->
 </div>

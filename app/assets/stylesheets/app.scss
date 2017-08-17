@@ -1,17 +1,39 @@
-#app-window {
-  height: calc(100vh - 40px);
-  width: 100%;
-  // padding: 20px 10% 20px 10%;
-  overflow-y: scroll;
-  position: relative;
+.hide {
+  transition: transform 0.5s ease-in-out;
+  transform: translate(-100%, 0);
+  position: absolute;
+  right: -100%;
 }
 
+#app-window {
+  height: calc(100vh - 40px);
+  overflow-y: auto;
+  // display: table;
+  // padding: 20px 10% 20px 10%;
+}
+
+// .flex {
+//   display: flex;
+// }
+
+// .post {
+//   display: block;
+//   vertical-align: bottom;
+// }
+
 .teste {
-  width: 100%;
+  flex: 1;
+  width: 100vw;
   padding: 20px 10% 20px 10%;
-  overflow-y: scroll;
-  position: absolute;
-  bottom: 0px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  .post:first-child {
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+  }
 }
 
 .click-more {

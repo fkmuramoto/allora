@@ -19,6 +19,11 @@
 
 $(function(){
 
+  $(document).ready(function(){
+    setTimeout(function () {
+      $("r-side").addClass("hide")}, 2000);
+  });
+
   $(".click-more").click(function(e){
     e.preventDefault();
 
@@ -38,7 +43,7 @@ $(function(){
 
     });
 
-    $("#app-window").animate({ scrollTop: $("#app-window").prop("scrollHeight")}, 3000);
+    $("#app-window").animate({ scrollTop: $(".teste").prop("scrollHeight")}, 3000);
 
   });
 
@@ -61,7 +66,7 @@ $(function(){
 
     });
 
-    $("#app-window").animate({ scrollTop: $("#app-window").prop("scrollHeight")}, 3000);
+    $("#app-window").animate({ scrollTop: $(".teste").prop("scrollHeight")}, 3000);
 
   });
 });
