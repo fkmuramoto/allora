@@ -20,6 +20,9 @@
 $(function(){
 
   $(document).ready(function(){
+
+    $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
+
     if(screen.width < 500)
       setTimeout(function () {
         $(".r-side").addClass("show")}, 2000);
@@ -30,10 +33,10 @@ $(function(){
 
     $(this).next().remove();
     $(this).parent().removeClass("text-center").addClass("text-right");
-    $(this).removeClass("btn btn-xs click-more").addClass("balloon-right");
+    $(this).removeClass("btn btn-xs click-more").addClass("btn-clicked");
 
-    var next_screen = $(this).parent().parent().next();
-    $(next_screen).children().each(function(index, element){
+    var more = $(this).parent().parent().next();
+    $(more).children().each(function(index, element){
 
       setTimeout(function() {
 
@@ -44,7 +47,7 @@ $(function(){
 
     });
 
-    $("#app-window").animate({ scrollTop: $(".teste").prop("scrollHeight")}, 3000);
+    $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
 
   });
 
@@ -53,10 +56,10 @@ $(function(){
 
     $(this).prev().remove();
     $(this).parent().removeClass("text-center").addClass("text-right");
-    $(this).removeClass("btn btn-xs click-next").addClass("balloon-right");
+    $(this).removeClass("btn btn-xs click-next").addClass("btn-clicked");
 
-    var next_post = $(this).parent().parent().parent().next();
-    $(next_post).children(".screen1").children().each(function(index, element){
+    var next = $(this).parent().parent().parent().next();
+    $(next).children(".intro").children().each(function(index, element){
 
       setTimeout(function() {
 
@@ -67,11 +70,30 @@ $(function(){
 
     });
 
-    $("#app-window").animate({ scrollTop: $(".teste").prop("scrollHeight")}, 3000);
+    $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
+
+  });
+
+  $(".click-start").click(function(e){
+    e.preventDefault();
+
+    var start = $(this).parent().next();
+    $(start).children(".intro").children().each(function(index, element){
+
+      setTimeout(function() {
+
+        $(element).removeClass("hidden")
+        $(element).animate({"left": "0px"})
+
+      }, index * 1000 + Math.random() * 750);
+
+    });
+
+    $(this).remove();
+    $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
 
   });
 });
-
 
 
 

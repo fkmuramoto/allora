@@ -6,35 +6,27 @@
   height: auto;
 }
 
-#app-window {
+#app {
   height: calc(100vh - 40px);
-  overflow-y: auto;
-  // display: table;
-  // padding: 20px 10% 20px 10%;
+  width: 100%;
+  overflow-y: scroll;
 }
 
-// .flex {
-//   display: flex;
-// }
-
-// .post {
-//   display: block;
-//   vertical-align: bottom;
-// }
-
-.teste {
+#chat {
   flex: 1;
-  width: 100vw;
-  padding: 20px 10% 20px 10%;
+  width: 100%;
+  padding: 20px;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
+}
 
-  .post:first-child {
-    height: calc(100vh - 40px);
-    display: flex;
-    align-items: flex-end;
-  }
+#init {
+  height: calc(100vh - 140px);
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .click-more {
@@ -46,6 +38,14 @@
 }
 
 .click-next {
+  background: #FFC837;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin: 5px 0;
+}
+
+.click-start {
   background: #FF8008;
   color: white;
   border-radius: 20px;
@@ -54,7 +54,8 @@
 }
 
 .btn-margin {
-  margin: 20px 0;
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 .pic-border {
@@ -68,10 +69,10 @@
 
 .balloon {
   background: #EBEBEB;
-  width: 85%;
+  width: 95%;
   border-radius: 4px 20px 20px 20px;
-  padding: 15px 25px 15px 25px;
-  line-height: 150%;
+  padding: 10px 20px 10px 20px;
+  line-height: 125%;
 
   &-image {
     background: #EBEBEB;
@@ -79,13 +80,13 @@
     padding: 5px;
     margin-bottom: 12px;
   }
+}
 
-  &-right {
-    background: #FFC837;
-    color: white;
-    border-radius: 20px 4px 20px 20px;
-    padding: 10px 15px;
-    margin: 5px 0;
-    text-decoration: none;
-  }
+.btn-clicked {
+  background: #CCCCCC;
+  color: #EBEBEB;
+  border-radius: 20px 4px 20px 20px;
+  padding: 10px 15px;
+  margin: 5px 0;
+  text-decoration: none;
 }
